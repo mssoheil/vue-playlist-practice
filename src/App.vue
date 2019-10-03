@@ -1,10 +1,10 @@
 <template>
 	<div>
-		<app-header title="Vue ninjas" />
+		<app-header :title="title" v-on:changeAppTitle="changeTheAppTitle($event)" />
 		<!-- <Ninja :ninjas="ninjas" @update-ninja="updateNinja" /> -->
 		<Ninja :ninjas="ninjas" />
 		<Ninja :ninjas="ninjas" />
-		<Footer copyright="Copyright 2019 Vue ninjas" />
+		<Footer :copyright="`${title} Footer`" />
 	</div>
 </template>
 
@@ -28,13 +28,16 @@ export default {
 				{ name: 'ryu', speciality: 'vueComponents', show: true },
 				{ name: 'crystal', speciality: 'HTML vizardry', show: false },
 				{ name: 'kami', speciality: 'clickEvents', show: false },
-				{ name: 'yoshi', speciality: 'data digin', show: false },
-			]
+			],
+			title: "vue ninjas"
 		}
 	},
 	methods: {
 		updateNinja (index) {
 			this.ninjas[index].show = !this.ninjas[index].show
+		},
+		changeTheAppTitle (title) {
+			this.title = title;
 		}
 	}
 
