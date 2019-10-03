@@ -1,7 +1,7 @@
 <template>
 	<div id="ninjas">
 		<ul>
-			<li v-for="(ninja, key) in ninjas" :key="ninja.name" @click="showNinja(key)">
+			<li v-for="(ninja, key) in localNinjas" :key="ninja.name" @click="showNinja(key)">
 				<h2>{{ ninja.name}}</h2>
 				<h3 v-show="ninja.show">{{ ninja.speciality}}</h3>
 			</li>
@@ -11,13 +11,28 @@
 
 <script>
 export default {
+	// props: ["ninjas"],
+	// props: {
+	// 	ninjas: Array
+	// },
 	props: {
-		ninjas: Array
+		ninjas: {
+			type: Array,
+			default: () => [],
+			required: true
+		}
+	},
+	data () {
+		// copy the value
+		return {
+			localNinjas: this.ninjas.map(x => ({ ...x }))
+		}
 	},
 	methods: {
 		showNinja (index) {
 			// eslint-disable-next-line
-			this.$emit("update-ninja", index)
+			// this.$emit("update-ninja", index);
+			this.localNinjas[index].show = !this.localNinjas[index].show
 		}
 	}
 }

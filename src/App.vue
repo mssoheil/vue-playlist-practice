@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<app-header title="Vue ninjas" />
-		<Ninja :ninjas="ninjas" @update-ninja="updateNinja" />
+		<!-- <Ninja :ninjas="ninjas" @update-ninja="updateNinja" /> -->
+		<Ninja :ninjas="ninjas" />
+		<Ninja :ninjas="ninjas" />
 		<Footer copyright="Copyright 2019 Vue ninjas" />
 	</div>
 </template>
