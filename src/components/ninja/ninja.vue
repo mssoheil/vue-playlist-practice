@@ -34,6 +34,25 @@ export default {
 			// this.$emit("update-ninja", index);
 			this.localNinjas[index].show = !this.localNinjas[index].show
 		}
+	},
+	// lifecycle hooks
+	beforeCreate () {
+		console.log("beforeCreate");
+	},
+	created () {
+		console.log("created");
+	},
+	beforeMount () {
+		console.log("beforeMount");
+	},
+	mounted () {
+		console.log("mounted");
+	},
+	beforeUpdate () {
+		console.log("beforeUpdate");
+	},
+	updated () {
+		console.log("updated");
 	}
 }
 </script>

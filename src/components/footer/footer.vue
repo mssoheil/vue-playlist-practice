@@ -5,9 +5,18 @@
 </template>
 
 <script>
+import { bus } from "../../main";
 export default {
 	props: {
-		copyright: String
+		copyright: {
+			type: String
+		}
+	},
+	// fires when the component is created
+	created () {
+		bus.$on("titleChanged", (data) => {
+			this.copyright = data;
+		})
 	}
 }
 </script>
