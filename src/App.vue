@@ -1,44 +1,30 @@
 <template>
 	<div>
-		<app-header :title="title" v-on:changeAppTitle="changeTheAppTitle($event)" />
-		<!-- <Ninja :ninjas="ninjas" @update-ninja="updateNinja" /> -->
-		<Ninja :ninjas="ninjas" />
-		<Ninja :ninjas="ninjas" />
-		<Footer :copyright="`${title} Footer`" />
+		<FormHelper>
+			<h2 slot="title">{{title}}</h2>
+			<p slot="text">{{text}}</p>
+		</FormHelper>
 	</div>
 </template>
 
 <script>
 
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
-import Ninja from "./components/ninja/ninja";
+import FormHelper from "./components/formHelper/formHelper.vue";
 
 export default {
 	name: 'app',
 	components: {
-		"app-header": Header,
-		Footer,
-		Ninja
+		FormHelper
 	},
 	data () {
 
 		return {
-			ninjas: [
-				{ name: 'ryu', speciality: 'vueComponents', show: true },
-				{ name: 'crystal', speciality: 'HTML vizardry', show: false },
-				{ name: 'kami', speciality: 'clickEvents', show: false },
-			],
-			title: "vue ninjas"
+			title: "I am dynamic the slot title",
+			text: "I am the dynamic paragraph text for the slot"
 		}
 	},
 	methods: {
-		updateNinja (index) {
-			this.ninjas[index].show = !this.ninjas[index].show
-		},
-		changeTheAppTitle (title) {
-			this.title = title;
-		}
+
 	}
 
 }
