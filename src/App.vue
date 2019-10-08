@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<component :is="component"></component>
+		<keep-alive>
+			<component :is="component"></component>
+		</keep-alive>
 		<button @click="showComponent('FormOne')">Show form One</button>
 		<button @click="showComponent('FormTwo')">Show form Two</button>
 	</div>
