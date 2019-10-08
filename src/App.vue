@@ -1,39 +1,28 @@
 <template>
 	<div>
-		<keep-alive>
-			<component :is="component"></component>
-		</keep-alive>
-		<button @click="showComponent('FormOne')">Show form One</button>
-		<button @click="showComponent('FormTwo')">Show form Two</button>
+		<AddBlog></AddBlog>
 	</div>
 </template>
 
 <script>
 
-import FormOne from "./components/formOne/formOne.vue";
-import FormTwo from "./components/formTwo/formTwo.vue";
+// shared components
+import AddBlog from "./components/addBlog/addBlog";
 
 export default {
 	name: 'app',
 	components: {
-		FormOne,
-		FormTwo
+		AddBlog
 	},
 	data () {
 
 		return {
-			component: "FormOne"
 		}
 	},
 	methods: {
-		showComponent (component) {
-			console.log(component);
-			this.component = component;
-		}
 	}
 
 }
 </script>
 
-<style lang="scss" scoped >
-</style>
+<style lang="scss" src="./App.scss" scoped />
