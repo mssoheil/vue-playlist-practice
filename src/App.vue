@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<AddBlog></AddBlog>
+		<ShowBlogs></ShowBlogs>
 	</div>
 </template>
 
@@ -8,11 +9,13 @@
 
 // shared components
 import AddBlog from "./components/addBlog/addBlog";
+import ShowBlogs from "./components/showBlogs/showBlogs";
 
 export default {
 	name: 'app',
 	components: {
-		AddBlog
+		AddBlog,
+		ShowBlogs
 	},
 	data () {
 
