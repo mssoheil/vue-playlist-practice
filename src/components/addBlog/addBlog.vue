@@ -16,6 +16,7 @@
 				<label>Cheese</label>
 				<input type="checkbox" value="cheese" v-model="blog.categories" />
 			</div>
+			<SelectBox :authors="authors" :blogAuthor="blog.author" @changedAuthor="changeAuthor" />
 		</form>
 		<div id="preview">
 			<h3>Preview blog</h3>
@@ -26,25 +27,35 @@
 			<ul>
 				<li v-for="(category, index) in blog.categories" :key="category">{{ index }}: {{ category }}</li>
 			</ul>
+			<p>Author: {{ blog.author }}</p>
 		</div>
 	</div>
 </template>
 
 <script>
+// shared components
+import SelectBox from "../selectBox/selectBox";
 
 export default {
+	components: {
+		SelectBox
+	},
 	data () {
 		return {
 			blog: {
 				title: "",
 				content: "",
-				categories: []
-			}
+				categories: [],
+				author: ""
+			},
+			authors: ["John", "Sam", "David"]
 		}
 	},
 
 	methods: {
-
+		changeAuthor (author) {
+			this.blog.author = author
+		}
 
 	}
 }
