@@ -37,6 +37,13 @@ Vue.directive("theme", {
 	},
 });
 
+// Filters
+Vue.filter("to-uppercase", value => {
+	return value.toUpperCase();
+});
+
+Vue.filter("snippet", value => `${value.slice(0, 50)}...`);
+
 new Vue({
 	render: h => h(App),
 }).$mount("#app");
