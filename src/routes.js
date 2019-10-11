@@ -1,5 +1,6 @@
 import ShowBlogs from "./screens/showBlogs/showBlogs";
 import AddBlog from "./screens/addBlog/addBlog";
+import SingleBlog from "./screens/singleBlog/singleBlog";
 
 export default [{
 		path: "/",
@@ -8,5 +9,9 @@ export default [{
 	{
 		path: "/add",
 		component: AddBlog
+	},
+	{
+		path: "/blog/:id",
+		component: SingleBlog
 	},
 ]
