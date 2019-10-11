@@ -1,17 +1,18 @@
 <template>
 	<div>
 		<!-- <AddBlog></AddBlog> -->
-		<ShowBlogs />
-		<ListBlogs />
+		<!-- <ShowBlogs />
+		<ListBlogs />-->
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
 
 // shared components
-import AddBlog from "./components/addBlog/addBlog";
-import ShowBlogs from "./components/showBlogs/showBlogs";
-import ListBlogs from "./components/listBlogs/listBlogs";
+import AddBlog from "components/addBlog/addBlog";
+import ShowBlogs from "components/showBlogs/showBlogs";
+import ListBlogs from "components/listBlogs/listBlogs";
 
 export default {
 	name: 'app',
