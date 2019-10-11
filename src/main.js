@@ -11,20 +11,22 @@ export const bus = new Vue();
 Vue.use(VueResource);
 
 // custom directives
-Vue.directive("rainbow", {
-	// vnode -> virtual node
-	// binding -> value passed
-	// el -> element itself
-	bind(el, binding, vnode) {
-		console.log(parseInt(Math.random() * 255));
-		const colorCode = () => parseInt(Math.random() * 255);
-		el.style.color = `rgb(${colorCode()},${colorCode()},${colorCode()})`;
-	},
-});
+// Vue.directive("rainbow", {
+// 	// vnode -> virtual node
+// 	// binding -> value passed
+// 	// el -> element itself
+// 	bind(el, binding, vnode) {
+// 		const colorCode = () => parseInt(Math.random() * 255);
+// 		el.style.color = `rgb(${colorCode()},${colorCode()},${colorCode()})`;
+// 	},
+// });
 
 Vue.directive("theme", {
 	bind(el, binding, vnode) {
-		const { value, arg } = binding;
+		const {
+			value,
+			arg
+		} = binding;
 		if (value === "wide") {
 			el.style.maxWidth = "1200px";
 		} else if (value === "narrow") {
@@ -38,9 +40,9 @@ Vue.directive("theme", {
 });
 
 // Filters
-Vue.filter("to-uppercase", value => {
-	return value.toUpperCase();
-});
+// Vue.filter("to-uppercase", value => {
+// 	return value.toUpperCase();
+// });
 
 Vue.filter("snippet", value => `${value.slice(0, 50)}...`);
 

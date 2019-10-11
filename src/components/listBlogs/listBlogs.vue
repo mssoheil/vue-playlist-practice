@@ -1,10 +1,9 @@
 <template>
 	<div v-theme:column="'wide'" id="show-blogs">
-		<h1>All blog articles</h1>
+		<h1>All blog titles</h1>
 		<input type="text" v-model="search" placeholder="search blogs" />
 		<div v-for="blog in filteredBlogs" class="single-blog" :key="blog.id">
 			<h2 v-rainbow>{{ blog.title | to-uppercase }}</h2>
-			<article>{{ blog.body | snippet }}</article>
 		</div>
 	</div>
 </template>
@@ -56,4 +55,4 @@ export default {
 
 </script>
 
-<style scoped lang="scss" src="./showBlogs.scss" />
+<style scoped lang="scss" src="./listBlogs.scss" />
