@@ -11,6 +11,7 @@
 
 <script>
 
+import searchMixin from "../../mixins/searchMixin";
 
 export default {
 	components: {
@@ -32,11 +33,11 @@ export default {
 			.then(res => { this.blogs = res.body.slice(0, 10) })
 	},
 	computed: {
-		filteredBlogs () {
-			return this.blogs.filter(blog => {
-				return blog.title.match(this.search);
-			});
-		}
+		// filteredBlogs () {
+		// 	return this.blogs.filter(blog => {
+		// 		return blog.title.match(this.search);
+		// 	});
+		// }
 
 	},
 	filters: {
@@ -51,7 +52,8 @@ export default {
 				el.style.color = `rgb(${colorCode()},${colorCode()},${colorCode()})`;
 			}
 		}
-	}
+	},
+	mixins: [searchMixin]
 }
 
 </script>
