@@ -3,6 +3,7 @@
 		<!-- <AddBlog></AddBlog> -->
 		<!-- <ShowBlogs />
 		<ListBlogs />-->
+		<Navigation />
 		<router-view></router-view>
 	</div>
 </template>
@@ -13,13 +14,15 @@
 import AddBlog from "components/addBlog/addBlog";
 import ShowBlogs from "components/showBlogs/showBlogs";
 import ListBlogs from "components/listBlogs/listBlogs";
+import Navigation from "components/navigation/navigation";
 
 export default {
 	name: 'app',
 	components: {
 		AddBlog,
 		ShowBlogs,
-		ListBlogs
+		ListBlogs,
+		Navigation
 	},
 	data () {
 
